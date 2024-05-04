@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trocchi&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cor-fundo: rgb(34,41,37);
+    --cor-hover: rgb(118,180,145);
+    --cor-primaria: rgb(231, 241, 236);
+}
+body {
+    width: 100vw;
+    max-width: 100vw;
+    background: linear-gradient(175deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 50%);
+}
+/*CONTAINER*/
+.container{
+    width: 100%;
+}
+.tela01{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+    'header header'
+    'sec01 sec02';
+}
+.tela02{
+    padding: 5%;
+}
+.grid-flip{
+    display: flex;
+    padding: 100px;
+    gap: 50px;
+}
+/*SECTION*/
+.sec01{
+    height: 90vh;
+    float: left;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5%;
+    grid-area: sec01;
+}
+.white{
+    color: white;
+}
+.sec02{
+    width: 50%;
+    float: right;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: sec02;
+}
+.sec02 img{
+    width: 80%;
+}
+/*MENU*/
+.dp-menu{
+    display: inline;
+    grid-area: header;
+    width: 100vw;
+}
+.dp-menu ul{
+    list-style-type: none;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    opacity: 0.2;
+}
+.dp-menu ul li{
+    display: inline;
+    position: relative;
+}
+.dp-menu ul li a{
+    color: var(--cor-primaria);
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    transition: background .3s;
+}
+.dp-menu ul li a:hover{
+    background-color: var(--cor-hover);
+}
+/*SUB-MENU*/
+.dp-menu ul ul{
+    display: none;
+    left: 0;
+    position: absolute;
+}
+.dp-menu ul li:hover ul{
+    display: block;
+}
+.dp-menu ul ul{
+    width: 150px;
+}
+.dp-menu ul ul li a{
+    display: block;
+}
+/*FONTES*/
+.poppins200{
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+.trocchi400{
+    font-family: "Trocchi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.merriweather600{
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+/*FLIP-ANIMAÇÃO*/
+.container-flip{
+    padding: 0px;
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+.container-flip:hover .flip{
+    transform: rotateY(180deg);
+}
+.flip{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+.frente-flip, .tras-flip{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #0000001b;
+    backface-visibility: hidden;
+}
+.frente-flip{
+    background-color: #001227;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+.frente-flip img{
+    width: 200px;
+}
+.tras-flip{
+    background-color: #001227;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24px;
+    color: #fff;
+}
+.tras-flip ul{
+    font-size: medium;
+    margin: 5%;
+}
+.tras-flip li{
+    margin-top: 2%;
+}
+/*GERAL*/
+.margin-top-5{
+    margin-top: 5%;
+}
+.text-center{
+    text-align: center;
+}
